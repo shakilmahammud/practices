@@ -69,3 +69,65 @@ function reTest(re, str) {
         console.log(`'${str}' doesn't match '${re.source}'`);
     }
 }
+// Parentheses () - Grouping
+re = /^([0-9]){5}/; // /^[0-9][0-9][0-9][0-9][0-9]/ // 5 digits
+re = /^([0-9]xy){4}/;
+
+// Bangladeshi Phone Number
+// total 11 digits
+re = /^01[0-9]{9}$/;
+re = /^+8801[0-9]{9}$/;
+
+// Shorthand Character Classes
+re = /w/; // Word Character - alpha numeric or _
+re = /w+/; // One or more
+re = /W/; // Non Word Character
+re = /W+/; // one or more
+re = /d/; // Digit
+re = /d+/;
+re = /D/; // Non digit
+re = /s/; // Match white space
+re = /S/; // Match non white space
+re = /Hellob/; // Word Boundary
+re = /bHellob/;
+
+// Assertions
+re = /x(?=yz)/; // Matches x only if x is before y
+re = /x(?!yz)/;
+
+
+str = "fsdfxyzfdsf";
+
+
+console.log(re.exec(str));
+reTest(re, str);
+function reTest(re, str) {
+    if(re.test(str)) {
+        console.log(`'${str}' matches '${re.source}'`);
+    }
+    else {
+        console.log(`'${str}' doesn't match '${re.source}'`);
+    }
+}
+
+
+// Examples
+let re;
+let str;
+
+// Postal Code
+// 4700, 4000
+re = /^[0-9]{4}$/;
+str = "4000";
+
+// Phone Number
+// 01717888888 +8801717888888 8801717888888
+re = /^(+)?(88)?01[0-9]{9}$/;
+str = "+8801717888888";
+
+// Email Address
+// bohubrihi8.learn@edu.com.bd
+re = /^([a-zA-Z0-9].?)+[^.]@([a-zA-Z0-9].?)+[^.]$/ ;
+str = "bohubrihi.learn@edu.com.bd" ;
+
+console.log(re.test(str));
