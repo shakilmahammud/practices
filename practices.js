@@ -123,11 +123,11 @@ str = "4000";
 // Phone Number
 // 01717888888 +8801717888888 8801717888888
 re = /^(+)?(88)?01[0-9]{9}$/;
-str = "+8801717888888";
+str = "+88017";
 
 // Email Address
 // bohubrihi8.learn@edu.com.bd
 re = /^([a-zA-Z0-9].?)+[^.]@([a-zA-Z0-9].?)+[^.]$/ ;
-str = "bohubrihi.learn@edu.com.bd" ;
+str = "shakil.mit.bd@gmail.com" ;
 
 console.log(re.test(str));
